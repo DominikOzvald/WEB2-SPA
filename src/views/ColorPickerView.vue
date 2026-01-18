@@ -14,7 +14,7 @@
     <form>
       <div class="form-group row">
         <span class="input-group col">
-          <span class="input-group-text bg-danger">Red</span>
+          <span class="input-group-text bg-danger text-white">Red</span>
           <input
             type="number"
             class="form-control"
@@ -25,7 +25,7 @@
           />
         </span>
         <span class="input-group col">
-          <span class="input-group-text bg-success">Green</span>
+          <span class="input-group-text bg-success text-white">Green</span>
           <input
             type="number"
             class="form-control"
@@ -36,7 +36,7 @@
           />
         </span>
         <span class="input-group col">
-          <span class="input-group-text bg-primary">Blue</span>
+          <span class="input-group-text bg-primary text-white">Blue</span>
           <input
             type="number"
             class="form-control"
