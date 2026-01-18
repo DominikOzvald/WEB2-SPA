@@ -49,6 +49,18 @@
       </div>
     </form>
   </div>
+  <div>
+    <h2 v-if="presets.length > 0" class="mt-2 mb-2">Presets</h2>
+    <div class="d-flex flex-wrap">
+      <color-card
+        v-for="color in presets"
+        :key="color.hex"
+        v-bind="color"
+        @click="setColor(color.r, color.g, color.b)"
+        class="ms-1 me-1 mt-1 clickable"
+      ></color-card>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -65,12 +77,29 @@ export default {
       redValue: 200,
       greenValue: 0,
       blueValue: 0,
+      presets: [],
     }
   },
   computed: {
     hexColor() {
       return decToHex(this.redValue) + decToHex(this.greenValue) + decToHex(this.blueValue)
     },
+  },
+  methods: {
+    setColor(r, g, b) {
+      this.redValue = r
+      this.greenValue = g
+      this.blueValue = b
+    },
+  },
+  async mounted() {
+    fetch('https://mocki.io/v1/1f7cabaf-f411-4133-996c-06ced0416149')
+      .then((response) => {
+        if (response.ok) {
+          response.json().then((colors) => (this.presets = colors))
+        }
+      })
+      .catch((err) => console.error(err))
   },
 }
 </script>
@@ -83,5 +112,8 @@ p {
   margin: 5px;
   text-align: center;
   font-size: 20px;
+}
+.clickable {
+  cursor: pointer;
 }
 </style>

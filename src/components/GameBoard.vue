@@ -67,6 +67,12 @@ export default {
       }
     },
   },
+  mounted() {
+    if (Math.random() < 0.5) {
+      this.xToMove = false
+    }
+    this.$emit('toMove', { toMove: this.xToMove ? 'X' : 'O' })
+  },
 }
 </script>
 
