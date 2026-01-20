@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <RouterLink class="nav-link" to="/">Home</RouterLink>
+        <RouterLink class="nav-link" to="/"><img src="/house-fill.svg" alt="Home" /></RouterLink>
       </li>
       <li class="nav-item">
         <RouterLink class="nav-link" to="/color-picker">Color Picker</RouterLink>
